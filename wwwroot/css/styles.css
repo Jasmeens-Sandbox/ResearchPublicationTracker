@@ -1,0 +1,247 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Teko:wght@300..700");
+
+:root {
+    --dm-sans-serif: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --ff-title: "Teko", sans-serif;
+    --ff-paragraph: var(--dm-sans-serif);
+    /* Neutral colors */
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-grey-light: hsl(0, 0%, 87%);
+    --clr-grey: hsl(204, 8%, 76%);
+    --clr-grey-dark: hsl(0, 0%, 55%);
+    --clr-black: hsl(0, 0%, 14%);
+    /* Primary colors (Header, Footer etc.)*/
+    --clr-primary: hsl(214, 78%, 54%);
+    --clr-primary-text: var(--clr-black);
+    /* Secondary colors (CTA,Buttons etc.)*/
+    --clr-secondary: hsl(10, 85%, 61%);
+    --clr-secondary-hover: hsl(10, 87%, 50%);
+    --clr-secondary-text: var(--clr-white);
+    /* Tertiary colors */
+    --clr-tertiary: hsl(210, 29%, 29%);
+    --clr-tertiary-light: hsl(192, 15%, 94%);
+    --clr-background: hsl(215, 50%, 95%);
+    /* Font Sizes (Responsive) */
+    --fs-0: clamp(1rem, 0.9643rem + 0.1786vw, 1.125rem);
+    --fs-1: clamp(1.125rem, 1.0607rem + 0.3214vw, 1.35rem);
+    --fs-2: clamp(1.2656rem, 1.1644rem + 0.5063vw, 1.62rem);
+    --fs-3: clamp(1.4238rem, 1.2752rem + 0.7431vw, 1.944rem);
+    --fs-4: clamp(1.6018rem, 1.393rem + 1.0443vw, 2.3328rem);
+    --fs-5: clamp(1.802rem, 1.5171rem + 1.4248vw, 2.7994rem);
+    --fs-6: clamp(2.0273rem, 1.6467rem + 1.9028vw, 3.3592rem);
+    --fs-7: clamp(2.2807rem, 1.7806rem + 2.5005vw, 4.0311rem);
+    /* Spacing (Responsive) */
+    --space-xxs: clamp(0.6331rem, 0.712rem + -0.0876vw, 0.6944rem);
+    --space-xs: clamp(0.8333rem, 0.8303rem + 0.0152vw, 0.844rem);
+    --space-s: clamp(1rem, 0.9643rem + 0.1786vw, 1.125rem);
+    --space-m: clamp(1.5rem, 1.4464rem + 0.2679vw, 1.6875rem);
+    --space-l: clamp(2rem, 1.9286rem + 0.3571vw, 2.25rem);
+    --space-xl: clamp(3rem, 2.8929rem + 0.5357vw, 3.375rem);
+    --space-2xl: clamp(4rem, 3.8571rem + 0.7143vw, 4.5rem);
+    --space-3xl: clamp(6rem, 5.7857rem + 1.0714vw, 6.75rem);
+}
+
+
+/* === Base Styles === */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* Ensures smooth scrolling */
+    scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--ff-title);
+}
+
+h1 {
+    font-size: var(--fs-7);
+}
+
+h2 {
+    font-size: var(--fs-5);
+}
+
+h3 {
+    font-size: var(--fs-3);
+}
+
+h4 {
+    font-size: var(--fs-1);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--ff-paragraph);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--clr-primary-text);
+    min-height: 100vh;
+    background-color: var(--clr-background);
+}
+
+.img-fluid {
+    width: 100%;
+    height: auto;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+.h-100vh {
+    height: 100vh;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.position-absolute {
+    position: absolute;
+}
+
+
+
+/* === Search Box Classes === */
+
+.search-container {
+    background-color: var(--clr-white);
+    border-radius: 50px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    padding: var(--space-xxs);
+    margin-top: var(--space-2xl);
+    transition: box-shadow 0.3s ease;
+}
+
+    .search-container:hover {
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+
+.form-control.search-input {
+    border: none;
+    background: transparent;
+    padding-left: 20px;
+    font-size: 1rem;
+    height: 50px;
+}
+
+    .form-control.search-input:focus {
+        box-shadow: none;
+        outline: none;
+    }
+
+.btn-search {
+    background-color: #007bff;
+    color: white;
+    border-radius: 50px;
+    padding: 10px 20px;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+    .btn-search:hover {
+        color: var(--clr-white);
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
+
+.search-icon {
+    color: #6c757d;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+/* === Card Component Classes === */
+.card-header {
+    margin-bottom: 0px;
+    background-color: var(--clr-white);
+    padding: var(--space-s) var(--space-m);
+    border-bottom: 0;
+}
+
+.dt-paging-button:nth-last-child(2) {
+    display: none !important;
+}
+
+/* === Loader === */
+.loader {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+    display: none;
+}
+
+.spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 9999;
+    width: 120px;
+    height: 120px;
+    margin: -60px 0 0 -60px;
+    border: 16px solid var(--clr-white);
+    border-radius: 50%;
+    border-top: 16px solid var(--clr-primary);
+    animation: spin 1s linear infinite;
+    display: none;
+}
+
+/* Loader overlay style */
+.loader-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* Spinner animation */
+.loader-spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.dt-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}

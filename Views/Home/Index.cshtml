@@ -1,0 +1,152 @@
+﻿@{
+	ViewData["Title"] = "Home Page";
+}
+
+<div class="row justify-content-center">
+	<div class="col-md-8 text-center ">
+		<div class="search-container position-relative">
+			<div class="d-flex align-items-center">
+				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+					 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+					 class="search-icon feather feather-search">
+					<circle cx="11" cy="11" r="8"></circle>
+					<line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+				</svg>
+				<input id="search-input" class="form-control search-input ps-5" type="search" placeholder="Search publicatoins..."
+					   aria-label="Search">
+				<button class="btn btn-search ms-2" type="submit" id="SearchTerm">Search</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="container my-5">
+	<ul class="nav nav-tabs" id="myTab" role="tablist">
+		<li class="nav-item" role="presentation">
+			<button class="nav-link active" id="pubmed-tab" data-bs-toggle="tab" data-bs-target="#pubmed" type="button" role="tab" aria-controls="pubmed" aria-selected="true">Pubmed</button>
+		</li>
+		<li class="nav-item" role="presentation">
+			<button class="nav-link" id="scopus-tab" data-bs-toggle="tab" data-bs-target="#scopus" type="button" role="tab" aria-controls="scopus" aria-selected="false">Scopus</button>
+		</li>
+	</ul>
+
+	<div class="tab-content mt-3" id="myTabContent">
+		<div class="tab-pane fade show active" id="pubmed" role="tabpanel" aria-labelledby="pubmed-tab">
+
+			<div class="row mt-3">
+				<!-- Card 1: Publications by Years -->
+				<div class="col-lg-6 col-md-12 mb-3" id="c-1">
+					<div class="card h-100 overflow-hidden">
+						<div class="card-header">
+							<h5>Publication by Years</h5>
+						</div>
+						<div class="card-body">
+							<canvas id="publicationsByYear"></canvas>
+						</div>
+					</div>
+				</div>
+
+				<!-- Card 2: Publication Type Distribution -->
+				<div class="col-lg-6 col-md-12 mb-3" id="c-2">
+					<div class="card h-100 overflow-hidden">
+						<div class="card-header">
+							<h5>Publication Type Distribution</h5>
+						</div>
+						<div class="card-body">
+							<canvas id="publicationsByType"></canvas>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col mt-3">
+					<div class="card h-lg-100 overflow-hidden">
+						<div class="card-header">
+							<div class="row">
+								<div class="col-9">
+									<h6 class="mb-0">Data Source: PUBMED [Journal Article]</h6>
+								</div>
+								<div class="col-3" id="csv-pubmed-table">
+								</div>
+							</div>
+						</div>
+						<div class="card-body p-4">
+							<table id="pubmed-table" class="table table-bordered">
+								<thead>
+									<tr>
+										<th>Provider</th>
+										<th>Title</th>
+										<th>Abstract</th>
+										<th>Authors</th>
+										<th>Publication Date</th>
+									</tr>
+								</thead>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="tab-pane fade" id="scopus" role="tabpanel" aria-labelledby="scopus-tab">
+
+			<div class="row mt-3">
+				<!-- Card 1: SCOPUS Publications by Years -->
+				<div class="col-lg-6 col-md-12 mb-3" id="c-3">
+					<div class="card h-100 overflow-hidden">
+						<div class="card-header">
+							<h5>Publication by Years</h5>
+						</div>
+						<div class="card-body">
+							<canvas id="publicationsByYearScopus"></canvas>
+						</div>
+					</div>
+				</div>
+
+				<!-- Card 2: SCOPUS Publication Type Distribution -->
+				<div class="col-lg-6 col-md-12 mb-3" id="c-4">
+					<div class="card h-100 overflow-hidden">
+						<div class="card-header">
+							<h5>Publication Type Distribution</h5>
+						</div>
+						<div class="card-body">
+							<canvas id="publicationsByTypeScopus"></canvas>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col mt-3">
+					<div class="card h-lg-100 overflow-hidden">
+						<div class="card-header">
+							<div class="row">
+								<div class="col-9">
+									<h6 class="mb-0">Data Source: SCOPUS [Journal Article]</h6>
+								</div>
+								<div class="col-3" id="csv-scopus-table">
+								</div>
+							</div>
+						</div>
+						<div class="card-body p-4">
+							<table id="scopus-table" class="table table-bordered">
+								<thead>
+									<tr>
+										<th>Provider</th>
+										<th>Title</th>
+										<th>Abstract</th>
+										<th>Authors</th>
+										<th>Publication Date</th>
+									</tr>
+								</thead>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
